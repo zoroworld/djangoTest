@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .views import myfirstweb, myfirstweb2, mywebname
 
 urlpatterns = [
+    # path('', 'Hello to my world'),
     path('admin/', admin.site.urls),
+    path('hello/', myfirstweb),
+    path('hello2/', myfirstweb2),
+    path('helloname/<name>', mywebname)
 ]
