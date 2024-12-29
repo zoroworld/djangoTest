@@ -1,5 +1,6 @@
 from django.contrib import admin
-from myproject.models import User , Product
+from myproject.models.User import User
+from myproject.models.Product import Product
 
 
 @admin.register(User)
