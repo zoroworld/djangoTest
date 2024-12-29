@@ -1,13 +1,13 @@
 from rest_framework.views import APIView
-from ..models.User import User
-from ..serializer.serializer import UserSerializer
+from myproject.models.User import User as Users
+from myproject.serializer import UserSerializer
 from rest_framework.response import Response as APIResponse
 from rest_framework import status
 
 class UserListCreateAPIView(APIView):
 
     def get(self, request):
-         users = User.objects.all()
+         users = Users.objects.all()
          serialized = UserSerializer(users, many=True)
          return APIResponse(serialized.data)
 
