@@ -16,13 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import myfirstweb, myfirstweb2, mywebname, users
-
+# from .views import myfirstweb, myfirstweb2, mywebname, users
+# from .views.users import update_delete_users, get_post_users
+# from .views.better_views import UserListCreateApiView, UserRetrieveUpdateDestroyAPIView
+from .views.custom_api_vews import UserListCreateAPIView
 urlpatterns = [
     # path('', 'Hello to my world'),
     path('admin/', admin.site.urls),
     # path('hello/', myfirstweb),
     # path('hello2/', myfirstweb2),
     # path('helloname/<name>', mywebname)
-     path('users/', users),
+    # path('users/', users),
+    # path('users/', get_post_users),
+    # path('users/<id>', update_delete_users),
+    # path('users/', UserListCreateApiView.as_view()),
+    # path('users/<id>', UserRetrieveUpdateDestroyAPIView.as_view()),
+    path('users/', UserListCreateAPIView.as_view()),
 ]
