@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from eccomapp.views import ListCreateProductAPIView, DairyListCreateAPIView, DairyRetrieveUpdateDestroyAPIView
 from eccomapp.views import UserListCreateAPIView, ShippingAddressListCreateAPIView, UserRetrieveUpdateDestroyAPIView
+from debug_toolbar.toolbar import debug_toolbar_urls
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -27,4 +28,4 @@ urlpatterns = [
     path("user/", UserListCreateAPIView.as_view()),
     path("user/<int:pk>", UserRetrieveUpdateDestroyAPIView.as_view()),
     path("user/<int:user_id>/shipping/", ShippingAddressListCreateAPIView.as_view()),
-]
+] + debug_toolbar_urls()
