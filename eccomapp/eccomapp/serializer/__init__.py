@@ -1,2 +1,5 @@
 from .product_serializer import ProductSerializer
 from .product_serializer import DairyProductSerializer
+from .user_serializer import CreateShippingAddressSerializer
+from .user_serializer import  ShippingAddressSerializer
+from .user_serializer import UserSerializer
