@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from eccomapp.models import Product
+from eccomapp.models import Product, DiaryProduct
+
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = "__all__"
+
+class DairyProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = DiaryProduct
+        fields = '__all__'

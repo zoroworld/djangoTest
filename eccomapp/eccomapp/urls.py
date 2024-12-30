@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from eccomapp.views import ListCreateProductAPIView
+from eccomapp.views import ListCreateProductAPIView, DairyListCreateAPIView, DairyRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path('', ListCreateProductAPIView.as_view()),
+    path('dairy/', DairyListCreateAPIView.as_view()),
+    path('dairy/<int:pk>/', DairyRetrieveUpdateDestroyAPIView.as_view()),
 ]
